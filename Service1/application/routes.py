@@ -4,7 +4,7 @@ import requests
 
 @app.route('/')
 def index():
-    weapons = requests.get('http://Service2:5000/get_weapon').text
-    rarities = requests.get('http://Service3:5000/get_rarity').text
-    player_damage = requests.post('http://Service4:5000/damage', json=dict(weapons=weapons, rarities=rarities))
-    return render_template('home.html', player_damage=player_damage.text)
+    weapons = requests.get('http://service2:5000/weapons').text
+    rarities = requests.get('http://service3:5000/rarities').text
+    damage = requests.post('http://service4:5000/damage', json={'weapons':weapons, 'rarities':rarities})
+    return render_template('home.html', weapons=weapons, rarities=rarities, damage=damage.text)
