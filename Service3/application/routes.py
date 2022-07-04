@@ -1,8 +1,7 @@
 from application import app
 import random
 
-rarities = ['Common', 'Uncommon', 'Rare', 'Epic', 'Legendary', 'Mythic']
-
-@app.route('/get_rarity')
-def get_rarity():
+@app.route('/rarities', methods=['GET'])
+def rarities():
+    rarities = ['Common', 'Uncommon', 'Rare', 'Epic', 'Legendary', 'Mythic']
     return random.choice(rarities)
