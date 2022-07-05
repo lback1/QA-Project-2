@@ -1,19 +1,29 @@
 version: "3.8"
 services:
-  Service1:
-    image: Epic-Weapon-Generator-front:v1
-    build: ./Service1
-    container_name: Service-1
+  service1:
+    image: epic-weapon-gen-front:v1
+    build: ./service1
+    container_name: service-1
     networks:
       - example-net
-
-  Service2:
-    image: Epic-Weapon-Generator-weapons:v1
-    build: ./Service1
-    container_name: Service-1
+  service2:
+    image: epic-weapon-gen-weapons:v1
+    build: ./service2
+    container_name: service-2
     networks:
       - example-net
-
+  service3:
+    image: epic-weapon-gen-rarities:v1
+    build: ./service3
+    container_name: service-3
+    networks:
+      - example-net
+  service4:
+    image: epic-weapon-gen-damage:v1
+    build: ./service4
+    container_name: service-4
+    networks:
+      - example-net
   nginx:
     image: nginx:latest
     container_name: nginx
@@ -27,5 +37,7 @@ services:
       - target: 80
         published: 80
         protocol: tcp
+    depenends_on:
+      - service1
 networks:
   example-net:
