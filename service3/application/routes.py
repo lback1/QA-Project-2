@@ -1,7 +1,7 @@
 from application import app
-import random
+from random import choice
 
 @app.route('/get_rarity', methods=['GET'])
 def get_rarity():
     rarities = ['Common', 'Uncommon', 'Rare', 'Epic', 'Legendary', 'Mythic']
-    return random.choice(rarities)
+    return choice(rarities)

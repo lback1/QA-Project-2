@@ -1,7 +1,7 @@
 from application import app
-import random
+from random import choice
 
 @app.route('/get_weapon', methods=['GET'])
 def get_weapon():
     weapons = ['Heavy Sniper', 'SCAR', 'Drum Gun', 'Compact SMG', 'Tactical Shotgun', 'Dual Pistols', 'Rocket Launcher', 'Grenade Launcher']
-    return random.choice(weapons)
+    return choice(weapons)
