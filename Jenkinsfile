@@ -8,8 +8,10 @@ pipeline {
         }
         stage('build and push images') {
              environment {
+             
                 docker-hub-credentials = credentials('docker_username')
                 docker-hub-credentials = credentials('docker_password')
+
             }
             steps {
                 sh "docker-compose build --parallel"
