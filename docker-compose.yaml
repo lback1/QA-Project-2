@@ -1,42 +1,37 @@
 version: "3.8"
 services:
-
   service1:
-    image: lback1/epic-weapon-gen-front:v1
+    image: lback1/epic-weapon-gen-front:latest
     build: ./service1
     container_name: service1
     deploy:
       replicas: 3
     networks:
       - example-net
-
   service2:
-    image: lback1/epic-weapon-gen-weapons:v1
+    image: lback1/epic-weapon-gen-weapons:latest
     build: ./service2
     container_name: service2
     deploy:
       replicas: 3
     networks:
       - example-net
-
   service3:
-    image: lback1/epic-weapon-gen-rarities:v1
+    image: lback1/epic-weapon-gen-rarities:latest
     build: ./service3
     container_name: service3
     deploy:
       replicas: 3
     networks:
       - example-net
-
   service4:
-    image: lback1/epic-weapon-gen-damage:v1
+    image: lback1/epic-weapon-gen-damage:latest
     build: ./service4
     container_name: service4
     deploy:
       replicas: 3
     networks:
       - example-net
-
   nginx:
     image: nginx:latest
     container_name: nginx
@@ -51,8 +46,7 @@ services:
         published: 80
         protocol: tcp
     depends_on:
-      - service1
-      
+      - service1 
 networks:
   example-net:
     driver: overlay
