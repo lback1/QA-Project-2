@@ -30,4 +30,50 @@ I can see what needs to be done, what is in progress and what has been completed
 
 I created a risk assessment to evalaute what challenges I may face during development and what action I could take to mitigate the impact.
 
+![2022-07-08 16_10_18-Risk Assessment - Excel](https://user-images.githubusercontent.com/100779613/178020631-ba78c8d7-f73a-48ee-9805-2772dea38580.png)
 
+### Pipeline  
+
+I used a Jenkins Pipeline job to automate testing  with the script created and start builds through docker.  
+This would be triggered by a webhook I have set up between Jenkins and Github after any changes are committed to the repository.  
+
+### Services  
+
+#### Service1:  
+Here we have the front end that receives a random object from both services 2&3 with a get request.  
+These two objects equal a result from a pre-defined list with a post request. This information is then returned through a html file with render template.   
+
+#### Service2:  
+Here we have a list of weapons that generates a random choice.  
+
+#### Service3:  
+Here we have a list of rarities that generates a random choice.  
+
+#### Service4:  
+Here we have the pre-defined list where the random choices are equal to an amount of damage inflicted on the player with the specific weapon&rarity generated.  
+
+### Testing  
+
+To test the functionality of my code for the 4 services created I made unit tests and carried these out using pytest. I recieved 100% coverage and all tests.  
+
+![2022-07-06 17_46_39-unit_test py - QA-Project-2  SSH_ projectdev  - Visual Studio Code](https://user-images.githubusercontent.com/100779613/178024039-5b28719b-dbb5-4fa8-a26f-2db81f3d76c6.png)
+
+![2022-07-06 17_13_40-● unit_test py - QA-Project-2  SSH_ projectdev  - Visual Studio Code](https://user-images.githubusercontent.com/100779613/178024100-7a459a64-2da3-4674-9fd2-c47a0433fc55.png)
+
+![2022-07-06 17_21_41-unit_test py - QA-Project-2  SSH_ projectdev  - Visual Studio Code](https://user-images.githubusercontent.com/100779613/178024152-5bb50974-a2a6-4968-b449-d6fb754499f3.png)
+
+![2022-07-06 18_04_50-unit_test py - QA-Project-2  SSH_ projectdev  - Visual Studio Code](https://user-images.githubusercontent.com/100779613/178024189-d98852d9-6595-4edb-88d7-22cd7d8de1b6.png)
+
+### Issues Encountered  
+
+I did encounter many issues during development as most of the technologies used are new to me and I need more time to implement them correctly.  
+There was a lot of technical issues, most of which I managed to solve. This took up a lot of time and made focusing on technologies more difficult.  
+However, developing this project has made me learn new skills which I can further develop and given me the experience of creating a mircoservice application.  
+
+### Future Improvements  
+
+I will add to the project when possible as I learn more and can better implement the technologies and achieve a perfect end result.  
+
+### Acknowledgements  
+
+Acknowledgements: Resources, QA, Adam-Leon
